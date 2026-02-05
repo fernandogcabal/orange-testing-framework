@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="UI Test Suite" parallel="classes" thread-count="2">
+
+    <!-- Disable test
+    <listeners>
+        <listener class-name="listeners.TestListener"></listener>
+    </listeners>
+
+    <test name="UI Smoke Tests">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+
+        <packages>
+            <package name="tests.ui"/>
+        </packages>
+    </test>
+
+     -->
+
+    <test name="Dummy Test">
+        <classes>
+            <class name="org.fernandogcabal.framework.tests.api.DummyTest"/>
+        </classes>
+    </test>
+</suite>
+

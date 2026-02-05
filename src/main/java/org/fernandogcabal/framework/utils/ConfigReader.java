@@ -48,7 +48,7 @@ public class ConfigReader{
     }
 
     //Singleton access method
-    private static ConfigReader getInstance(){
+    public static ConfigReader getInstance(){
         return INSTANCE;
     }
 

@@ -17,6 +17,9 @@ import java.time.Duration;
 
 public class BaseTest{
 
+
+    protected WebDriver driver;
+
     //Sanity Test method
     //__sanityCheckBase = internal
     @Test
@@ -36,13 +39,16 @@ public class BaseTest{
 
         //Create WebDriver (Factory Pattern)
         //Browser creation centralized
-        WebDriver driver = DriverFactory.createDriver(BrowserType.CHROME);
+        driver = DriverFactory.createDriver(BrowserType.CHROME);
 
         //Driver configuration
         //Standard UI test setup
         driver.manage().window().maximize();
         //Explicit page load timeout
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+
+        //GetUrl
+        driver.get(ConfigReader.get("baseUrl"));
 
         //Store driver in DriveManager
         DriverManager.setDriver(driver);

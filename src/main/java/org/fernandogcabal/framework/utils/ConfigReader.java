@@ -6,8 +6,8 @@ import java.util.Properties;
 public class ConfigReader{
 
     //Singleton Setup eager initialization
+    private static final Properties properties = new Properties();
     private static final ConfigReader INSTANCE = new ConfigReader();
-    private final Properties properties = new Properties();
 
     //Private constructor
     private ConfigReader(){
@@ -53,7 +53,7 @@ public class ConfigReader{
     }
 
     //Get Config value
-    public String get(String key){
+    public static String get(String key){
 
         //Access config by key
         String value =  properties.getProperty(key);
